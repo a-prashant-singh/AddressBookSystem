@@ -7,31 +7,26 @@ public class AddressBookMain {
         AddressBook addressBook = new AddressBook();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter contact details:");
-        System.out.print("Id: ");
-        int id = Integer.parseInt(scanner.nextLine());
-        System.out.print("First Name: ");
-        String firstName = scanner.nextLine();
-        System.out.print("Last Name: ");
-        String lastName = scanner.nextLine();
-        System.out.print("Address: ");
-        String address = scanner.nextLine();
-        System.out.print("City: ");
-        String city = scanner.nextLine();
-        System.out.print("State: ");
-        String state = scanner.nextLine();
-        System.out.print("ZIP: ");
-        String zip = scanner.nextLine();
-        System.out.print("Phone Number: ");
-        String phoneNumber = scanner.nextLine();
-        System.out.print("Email: ");
-        String email = scanner.nextLine();
+        String op;
 
-        Contact contact = new Contact(id,firstName, lastName, address, city, state, zip, phoneNumber, email);
-        addressBook.addContact(contact);
+        do {
+            System.out.println("Press 1 for Adding Contact    ");
+            System.out.println("Press 2 for Display Contact   ");
+            System.out.println("Press 3 for Edit Contact      ");
+            System.out.println("Press 4 for Delete contact    ");
+            System.out.println("Press 5 for Exit              ");
 
-        System.out.println("Contacts in Address Book:");
-        addressBook.displayContacts();
+            int choice = scanner.nextInt();
 
+            if (choice == 1) {
+                addressBook.addContact();
+            }
+            if (choice == 2) {
+                addressBook.displayContacts();
+            }
+
+            System.out.println("Do you want to continue : (yes/no): ");
+            op = scanner.next();
+        } while (op.equalsIgnoreCase("yes"));
     }
 }
