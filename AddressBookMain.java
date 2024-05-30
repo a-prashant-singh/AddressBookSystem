@@ -30,7 +30,14 @@ public class AddressBookMain {
                 int id= scanner.nextInt();
                 addressBook.editContact(id);
             }
-
+            if (choice==4)
+            {
+                System.out.println("Enter the id for delete : ");
+                int id= scanner.nextInt();
+                addressBook.deleteContact(id);
+            }
+            if (choice==5)
+                break;
             System.out.println("Do you want to continue : (yes/no): ");
             op = scanner.next();
         } while (op.equalsIgnoreCase("yes"));

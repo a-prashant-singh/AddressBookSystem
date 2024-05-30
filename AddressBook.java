@@ -72,6 +72,9 @@ public class AddressBook {
         }
     }
 
+    public void deleteContact(int id) {
+        contacts.removeIf(contact -> contact.getId()==id);
+    }
 
 }
 
