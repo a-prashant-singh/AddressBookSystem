@@ -24,6 +24,12 @@ public class AddressBookMain {
             if (choice == 2) {
                 addressBook.displayContacts();
             }
+            if (choice==3)
+            {
+                System.out.println("Enter the id for edit : ");
+                int id= scanner.nextInt();
+                addressBook.editContact(id);
+            }
 
             System.out.println("Do you want to continue : (yes/no): ");
             op = scanner.next();
