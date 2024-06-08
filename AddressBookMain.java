@@ -14,7 +14,8 @@ public class AddressBookMain {
             System.out.println("Press 2 for Display Contact   ");
             System.out.println("Press 3 for Edit Contact      ");
             System.out.println("Press 4 for Delete contact    ");
-            System.out.println("Press 5 for Exit              ");
+            System.out.println("Press 5 for Adding multiple contact    ");
+            System.out.println("Press 6 for Exit              ");
 
             int choice = scanner.nextInt();
 
@@ -36,7 +37,16 @@ public class AddressBookMain {
                 int id= scanner.nextInt();
                 addressBook.deleteContact(id);
             }
-            if (choice==5)
+            if(choice==5) {
+                String addOrNot;
+                do {
+                    addressBook.addContact();
+                    System.out.println("Do you want to add more contact : (yes/no): ");
+                    addOrNot = scanner.next();
+                }
+                while (addOrNot.equalsIgnoreCase("yes"));
+            }
+            if (choice==6)
                 break;
             System.out.println("Do you want to continue : (yes/no): ");
             op = scanner.next();
